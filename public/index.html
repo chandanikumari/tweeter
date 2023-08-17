@@ -7,6 +7,22 @@
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
 
+    <link
+    href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bungee&family=Merriweather:ital@0;1&family=Montserrat:wght@400;500&family=Source+Sans+3:ital,wght@0,300;0,600;1,300;1,600&display=swap"
+    rel="stylesheet"/>
+
+    <link rel="stylesheet" type="text/css" href="./styles/nav.css">
+
+    <link rel="stylesheet" type="text/css" href="./styles/header.css">
+
+    <link rel="stylesheet" type="text/css" href="./styles/new-tweet.css">
+
+    <link rel="stylesheet" type="text/css" href="./styles/all-tweets.css">
+
+    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
@@ -15,15 +31,61 @@
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
+  
+
+    
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
-    <nav>
+    <nav class="navbar">
       <span>tweeter</span>
+      <span class="write-a-tweet">
+        <div>Write a new tweet</div>
+      <div class="arrow"><i class="fa-solid fa-angles-down"></i></div></span>
     </nav>
+    
+    <header class="head">
+      <div class="image">
+          <img src="/images/profile-hex.png"> 
+      </div>
+      <br>
+      <div class="name">
+          <h2>Amy Mansell</h2>
+      </div>
+    </header>
 
     <!-- Page-specific (main) content here -->
-    <main class="container"></main>
+    <main class="container">
+      <section class="new-tweet" id="main-container">
+        <h2>Compose Tweet</h2>
+        <form action="/tweets" method="POST">
+          <label class="form" for="tweet-text">What are you humming about?</label>
+          <textarea class="textBox" ="text" id="tweet-text"></textarea>
+          <div>
+            <button class="button" type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section> 
+      <article class="all-tweets">
+          <header class="top">
+            <label for="name">Rhoda Jacobs</label>
+            <label for="username" id="tweeterID" style="color:rgb(196, 202, 246)">@MrsJacobs</label>
+          </header>
+          <p>Intense coding bootcamp accelerates skills, fostering collaboration among diverse minds in tech.</p>
+          <footer>
+            <label>10 days ago</label>
+            <div class="footer_icons">
+              <i class="fa-solid fa-flag"></i>
+              <i class="fa-solid fa-retweet"></i>
+              <i class="fa-solid fa-heart"></i>
+            </div>
+          </footer
+      </article>
+         
+    </main>
   </body>
 </html>

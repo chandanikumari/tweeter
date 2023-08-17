@@ -1,0 +1,23 @@
+header {
+  margin: 0;
+}
+
+.head {
+  height: 600px;
+  width: 100%;
+  background-image: url("../images/cardboard.png");
+  background-color: antiquewhite;
+}
+
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 150px;
+}
+
+.name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
