@@ -52,15 +52,6 @@ article p {
   width: 100%;
 }
 
-/* .allTweetstextBox {
-  display: flex;
-  background-color: #f4f1ec;
-  flex-direction: column;
-  border-left-style: hidden;
-  border-top-style: hidden;
-  border-right-style: hidden;
-  border-bottom: 5px solid;
-  text-align: left;
-  margin-top: 50px;
-  width: 100%;
-} */
+main article h5 {
+  color:rgb(196, 202, 246) 
+}
