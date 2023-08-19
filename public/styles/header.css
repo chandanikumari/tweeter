@@ -6,7 +6,7 @@ header {
   height: 600px;
   width: 100%;
   background-image: url("../images/cardboard.png");
-  background-color: antiquewhite;
+  background-color: lightslategray;
 }
 
 .image {
@@ -20,4 +20,22 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: azure;
+}
+
+@media screen  and (min-width: 1024px) {
+ .head {
+    height: 400px;
+    width: 30%;
+    float: left;
+    margin: 150px 0px 0px 30px;
+    position: fixed;
+  }
+
+  .image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 35px;
+  }
 }

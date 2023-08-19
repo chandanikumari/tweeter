@@ -31,3 +31,11 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+
+@media screen and (min-width: 1024px) {
+  .container {
+    margin: 150px 50px 50px 150px;
+    width: 60%;
+    float: right;
+  }  
+}
