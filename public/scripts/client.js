@@ -28,8 +28,6 @@ $(document).ready(function() {
     return $container;
   };
 
-  // let $tweet = $(`<article class="tweet">Hello world</article>`);
-
   const createTweetElement = function(tweet) {
     /* Your code for creating the tweet element */
     let $tweet = `<article class="all-tweets">
@@ -64,28 +62,16 @@ $(document).ready(function() {
     $("#tweetSizeError").slideUp();
     $("#tweetEmptyError").slideUp();
     let $tweet = $('#tweet-text').val().trim();
-    console.log("Troubleshooting ::::::::", $tweet);
-
     if ($tweet.length === 0) {
-      // alert($tweet);
       $("#tweetEmptyError").slideDown('slow');
-      // $("#tweetEmptyError").hide();
-      // $("#tweetEmptyError").slideUp(); // Hide the error message, make it slide up
       return;
     }
     if ($tweet.length > 140) {
-      // alert("Sorry you have exceeded the maximum word limit of 140 characters");
-  
       $("#tweetSizeError").slideDown();
-      
-      // $("#tweetSizeError").hide();
-      // $("#tweetSizeError").slideUp(); // Hide the error message, make it slide up
       return;
     }
     $tweet = $('<div>').text($tweet);
-    console.log("Handler for `submit` called.");
     let str = $(this).serialize();
-    console.log(str);
 
     // send the POST request
 
@@ -99,7 +85,7 @@ $(document).ready(function() {
         $('.counter').text(140);
         console.log('Request was successful:', data);
       },
-      error: function (error) {
+      error: function(error) {
         console.log('An error occurred:', error);
       }
     });
@@ -111,7 +97,6 @@ $(document).ready(function() {
     $.ajax({
       type: 'GET',
       url: '/tweets',
-      // console.log("Troubleshooting", tweet);
       success: function(tweet) {
         renderTweets(tweet);
       },
