@@ -1,7 +1,7 @@
 $(document).ready(function() {
   // --- our code goes here ---
   const $tweet = $('#tweet-text');
-  $tweet.on('keyup', function() {
+  $tweet.on('input', function() {
     let charLeftOut = (140 - (this.value.length));
     let $charCount = $('.counter');
     $charCount.text(charLeftOut);

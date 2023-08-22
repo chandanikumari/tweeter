@@ -61,19 +61,25 @@ $(document).ready(function() {
 
   $("form").on("submit", function(event) {
     event.preventDefault();
-    let $tweet = $('#tweet-text').val();
+    $("#tweetSizeError").slideUp();
+    $("#tweetEmptyError").slideUp();
+    let $tweet = $('#tweet-text').val().trim();
     console.log("Troubleshooting ::::::::", $tweet);
 
     if ($tweet.length === 0) {
       // alert($tweet);
       $("#tweetEmptyError").slideDown('slow');
-      $("#tweetEmptyError").hide();
+      // $("#tweetEmptyError").hide();
+      // $("#tweetEmptyError").slideUp(); // Hide the error message, make it slide up
       return;
     }
     if ($tweet.length > 140) {
       // alert("Sorry you have exceeded the maximum word limit of 140 characters");
-      $("#tweetSizeError").slideDown('slow');
-      $("#tweetSizeError").hide();
+  
+      $("#tweetSizeError").slideDown();
+      
+      // $("#tweetSizeError").hide();
+      // $("#tweetSizeError").slideUp(); // Hide the error message, make it slide up
       return;
     }
     $tweet = $('<div>').text($tweet);
@@ -85,7 +91,7 @@ $(document).ready(function() {
 
     $.ajax({
       type: 'POST',
-      url: 'http://localhost:8080/tweets',
+      url: '/tweets',
       data: str,
       success: function(data) {
         loadtweets();
@@ -104,7 +110,7 @@ $(document).ready(function() {
   const loadtweets = function() {
     $.ajax({
       type: 'GET',
-      url: 'http://localhost:8080/tweets',
+      url: '/tweets',
       // console.log("Troubleshooting", tweet);
       success: function(tweet) {
         renderTweets(tweet);
